@@ -1,42 +1,44 @@
-import React from "react";
-import { Route } from "react-router-dom";
-import MainHeader from "./Header/MainHeader";
-import AuthForms from "./Authentication/AuthForm";
-import Authorized from "./Profile/Authorized";
-import AnyUserPlaces from "./user/pages/AnyUserPlaces";
-import PlacePage from "./places/pages/PlacePage";
-import Users from "./user/pages/Users";
-import useRequiredAuthContext from "./hooks/use-required-authContext";
+import { useState } from "react";
+import { io, Socket } from "socket.io-client";
+import Login from "./Login";
+import MessageBox from "./MessageBox";
 
-const App: React.FC = (porps) => {
-  const authContext = useRequiredAuthContext();
+const WS_URL = "http://localhost:5000";
+
+interface ServerToClientEvents {
+  "new-message": (message: string, username: string) => void;
+}
+
+interface ClientToServerEvents {
+  "Hello-Server": (usernameInput: string) => void;
+  "send-message": (message: string, username: string) => void;
+}
+
+export type MySocket = Socket<ServerToClientEvents, ClientToServerEvents>;
+
+const App = () => {
+  const [username, setUsername] = useState<string>("");
+  const [socket, setSocket] = useState<MySocket>();
+
+  const loginHandler = (usernameInput: string) => {
+    setUsername(usernameInput);
+    const socket: MySocket = io(WS_URL);
+    setSocket(socket);
+
+    socket.emit(`Hello-Server`, usernameInput);
+  };
 
   return (
-    <>
-      <MainHeader />
-
-      <Route path="/" exact>
-        <Users />
-      </Route>
-
-      <Route path="/login">
-        <AuthForms title={"Login"} />
-      </Route>
-
-      <Route path="/signup">
-        <AuthForms title={"Signup"} />
-      </Route>
-
-      <Route path="/places/:userId" exact>
-        <AnyUserPlaces />
-      </Route>
-
-      <Route path="/place/:placeId" exact>
-        <PlacePage />
-      </Route>
-
-      {authContext.isLoggedin && <Authorized />}
-    </>
+    <div className="w-full h-screen flex flex-col items-center overflow-scroll">
+      <div className="p-2 bg-orange text-white m-2 rounded-2xl">
+        {username === "" ? "Ofline" : username}
+      </div>
+      {username === "" ? (
+        <Login onLogin={loginHandler} />
+      ) : (
+        <MessageBox socket={socket!} username={username} />
+      )}
+    </div>
   );
 };
 
