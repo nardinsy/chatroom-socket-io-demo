@@ -1,0 +1,73 @@
+.button {
+  width: 5rem;
+  padding: 0.5rem 0.8rem;
+  border: none;
+  border-radius: 3rem;
+  margin-left: 0.7rem;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+.button:hover {
+  color: rgb(223, 223, 230);
+  transition: color 0.5s ease-in-out;
+}
+
+.button-submit {
+  background-color: #5f9ea0;
+  border: 0.5px solid #5f9ea0;
+  color: white;
+}
+
+.button-submit:hover {
+  background-color: white;
+  border: 0.5px solid #5f9ea0;
+  color: #5f9ea0;
+}
+
+.button-cancel {
+  background-color: white;
+  border: 0.5px solid rgba(0, 0, 0, 0.5);
+  color: rgb(44, 43, 43);
+}
+
+.button-cancel:hover {
+  background-color: white;
+  border: 0.5px solid rgb(194, 106, 106);
+  color: rgb(194, 106, 106);
+}
+
+.button-delete {
+  color: rgb(182, 20, 20);
+  background: rgb(211, 167, 167);
+}
+
+.button-delete:hover {
+  background-color: white;
+  border: 0.5px solid rgb(194, 106, 106);
+  color: rgb(182, 20, 20);
+}
+
+.button-edit {
+  color: #5f9ea0;
+  background: white;
+  border: 0.5px solid white;
+}
+
+.button-edit:hover {
+  border: 0.5px solid #5f9ea0;
+  color: #5f9ea0;
+  background: white;
+}
+
+.disabled-button {
+  /* width: 5rem; */
+  /* padding: 0.5rem 0.8rem; */
+  /* border: none; */
+  /* border-radius: 3rem; */
+  /* margin-left: 0.7rem; */
+  /* cursor: not-allowed; */
+  /* pointer-events: all !important; */
+  /* color: rgb(85, 85, 85); */
+  /* background-color: rgb(197, 197, 197); */
+}

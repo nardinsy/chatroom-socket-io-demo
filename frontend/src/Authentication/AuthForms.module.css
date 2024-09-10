@@ -1,0 +1,21 @@
+.forms-modal-header {
+  display: flex;
+  justify-content: space-between;
+
+  border: 0.1rem solid gray;
+  cursor: pointer;
+}
+
+.option {
+  font-weight: bold;
+  color: rgb(71, 71, 71);
+  padding: 1rem;
+  width: 50%;
+  text-align: center;
+  transition: all 0.7s ease-in-out;
+}
+
+.active {
+  background-color: #5f9ea0;
+  color: white;
+}

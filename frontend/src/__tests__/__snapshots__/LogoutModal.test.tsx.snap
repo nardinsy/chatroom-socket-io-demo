@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Logout modal cancels correctly 1`] = `
+<body>
+  <div>
+    <div
+      class="backdrop"
+      data-testid="backdrop"
+    />
+    <div
+      class="modal undefined"
+    >
+      <div
+        class="content"
+      >
+        <div
+          class="message-container"
+        >
+          <div
+            class="message"
+          >
+            Do you want to log out?
+          </div>
+          <div>
+            <button
+              class="button undefined button-submit"
+              tabindex="0"
+            >
+              Logout
+            </button>
+            <button
+              class="button undefined button-cancel"
+              tabindex="0"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Logout modal logs out correctly 1`] = `
+<body>
+  <div>
+    <div
+      class="backdrop"
+      data-testid="backdrop"
+    />
+    <div
+      class="modal undefined"
+    >
+      <div
+        class="content"
+      >
+        <div
+          class="message-container"
+        >
+          <div
+            class="message"
+          >
+            Do you want to log out?
+          </div>
+          <div>
+            <button
+              class="button undefined button-submit"
+              tabindex="0"
+            >
+              Logout
+            </button>
+            <button
+              class="button undefined button-cancel"
+              tabindex="0"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

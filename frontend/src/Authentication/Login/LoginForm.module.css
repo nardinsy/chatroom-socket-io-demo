@@ -1,0 +1,54 @@
+.control {
+  margin: 1rem 0;
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+}
+
+.control label,
+.control input {
+  display: block;
+}
+
+.control label {
+  font-weight: bold;
+  flex: 1;
+  color: #464646;
+  margin-bottom: 0.5rem;
+}
+
+.control input {
+  position: relative;
+  padding: 0.35rem 0.35rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.control input:focus {
+  outline: none;
+  border-color: #5f9ea0;
+}
+
+.actions {
+  text-align: center;
+}
+
+.eye-icon {
+  position: absolute;
+  top: 11.6rem;
+  right: 1.5rem;
+  color: rgb(143, 135, 135);
+}
+
+.eye-icon:hover {
+  color: rgb(80, 74, 74);
+}
+
+input::-ms-reveal,
+input::-ms-clear {
+  display: none;
+}
+
+.invalid {
+  background-color: rgb(219, 195, 195);
+}

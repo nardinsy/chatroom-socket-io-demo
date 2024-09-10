@@ -1,0 +1,50 @@
+.modal-picture {
+  display: flex;
+  justify-content: center;
+  border-radius: 2rem;
+}
+
+.modal {
+  box-shadow: none;
+  background-color: transparent;
+}
+
+.icon {
+  color: white;
+  padding: 0.5rem;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  font-size: 1rem;
+  transition: all ease-in 0.2s;
+}
+
+.icon:hover {
+  background-color: #abaaa6;
+}
+
+.picture-ellipsis {
+  position: absolute;
+  top: 0;
+  right: 0rem;
+}
+
+.picture-close {
+  position: absolute;
+  top: 0;
+  left: 0rem;
+}
+
+.picture-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-1rem);
+  right: 0;
+}
+
+.picture-back {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-1rem);
+  left: 0;
+}
