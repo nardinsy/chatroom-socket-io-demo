@@ -10,7 +10,7 @@ interface ServerToClientEvents {
 }
 
 interface ClientToServerEvents {
-  "Hello-Server": (usernameInput: string) => void;
+  "hello-server": (usernameInput: string) => void;
   "send-message": (message: string, username: string) => void;
 }
 
@@ -25,7 +25,7 @@ const App = () => {
     const socket: MySocket = io(WS_URL);
     setSocket(socket);
 
-    socket.emit(`Hello-Server`, usernameInput);
+    socket.emit(`hello-server`, usernameInput);
   };
 
   return (
